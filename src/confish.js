@@ -2,7 +2,9 @@
 import fs from 'fs';
 import app from 'commander';
 import path from 'path';
-import hogan from 'hogan.js';
+import dot from 'dot';
+
+dot.templateSettings.strip = false;
 
 app.version(require('../package.json').version)
 	.usage('<template>')
@@ -15,5 +17,5 @@ let data = '';
 
 process.stdin.on('data', d => data = data + d);
 process.stdin.on('end', () => {
-	process.stdout.write(hogan.compile(input).render(JSON.parse(data)));
+	process.stdout.write(dot.template(input)(JSON.parse(data)));
 });

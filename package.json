@@ -1,6 +1,6 @@
 {
   "name": "confish",
-  "description": "Render json data from stdin into mustache templates",
+  "description": "Render json data from stdin into templates",
   "version": "1.0.0",
   "bin": "lib/confish.js",
   "scripts": {
@@ -19,6 +19,6 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "commander": "^2.8.0",
-    "hogan.js": "^3.0.2"
+    "dot": "^1.0.3"
   }
 }
